@@ -1,0 +1,18 @@
+<template>
+    <div class="manager-container">
+        <div class="page-header">
+            <h1 class="page-title">Room Booking System</h1>
+            <p class="page-subtitle">Book meeting rooms and manage your reservations</p>
+        </div>
+        
+        <c-room-booking-form 
+            onrefreshbookings={handleRefreshBookings}>
+        </c-room-booking-form>
+        
+        <c-room-booking-list 
+            oneditbooking={handleEditBooking}
+            ondeletebooking={handleDeleteBooking}
+            oncancelbooking={handleCancelBooking}>
+        </c-room-booking-list>
+    </div>
+</template>

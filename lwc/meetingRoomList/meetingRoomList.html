@@ -1,0 +1,96 @@
+<template>
+    <div class="list-container">
+        <lightning-card title="Meeting Rooms" icon-name="standard:location">
+            <div slot="actions">
+                <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" onclick={handleRefresh}
+                    title="Refresh List"></lightning-button-icon>
+            </div>
+
+            <div class="slds-var-p-around_medium">
+                <!-- Search Bar -->
+                <div class="search-container slds-var-m-bottom_medium">
+                    <lightning-input type="search" label="Search Rooms" value={searchTerm} onchange={handleSearch}
+                        placeholder="Search by name or location..." variant="label-hidden"></lightning-input>
+                </div>
+
+                <!-- Loading Spinner -->
+                <template if:true={isLoading}>
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </template>
+
+                <!-- Room Count -->
+                <div class="slds-var-m-bottom_small">
+                    <p class="room-count">Total Rooms: {roomCount}</p>
+                </div>
+
+                <!-- Rooms Grid -->
+                <template if:true={hasRooms}>
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <template for:each={filteredRooms} for:item="room">
+                            <div key={room.Id}
+                                class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                                <div class="room-card">
+                                    <div class="room-card-header">
+                                        <h3 class="room-name">
+                                            <lightning-icon icon-name="standard:location" size="small"
+                                                class="slds-var-m-right_x-small"></lightning-icon>
+                                            {room.Name}
+                                        </h3>
+                                        <span class={room.availabilityClass}>
+                                            {room.availabilityText}
+                                        </span>
+                                        <!-- <template if:true={room.Is_Available__c}>
+                                            <span class="status-badge available">Available</span>
+                                        </template>
+                                        <template if:false={room.Is_Available__c}>
+                                            <span class="status-badge unavailable">Unavailable</span>
+                                        </template> -->
+                                    </div>
+
+                                    <div class="room-card-body">
+                                        <div class="room-detail">
+                                            <lightning-icon icon-name="utility:groups" size="x-small"></lightning-icon>
+                                            <span class="detail-label">Capacity:</span>
+                                            <span class="detail-value">{room.Capacity__c} people</span>
+                                        </div>
+
+                                        <div class="room-detail">
+                                            <lightning-icon icon-name="utility:location"
+                                                size="x-small"></lightning-icon>
+                                            <span class="detail-label">Location:</span>
+                                            <span class="detail-value">{room.Location__c}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="room-card-footer">
+                                        <lightning-button variant="brand" label="Edit" onclick={handleEdit}
+                                            data-id={room.Id} class="slds-var-m-right_x-small"></lightning-button>
+
+                                        <lightning-button variant="destructive" label="Delete" onclick={handleDelete}
+                                            data-id={room.Id}></lightning-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- Empty State -->
+                <template if:false={hasRooms}>
+                    <div class="empty-state">
+                        <lightning-icon icon-name="custom:custom19" size="large"></lightning-icon>
+                        <h3 class="slds-var-m-top_medium">No Meeting Rooms Found</h3>
+                        <p class="slds-var-m-top_small">
+                            <template if:true={searchTerm}>
+                                No rooms match your search criteria.
+                            </template>
+                            <template if:false={searchTerm}>
+                                Create your first meeting room using the form above.
+                            </template>
+                        </p>
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>

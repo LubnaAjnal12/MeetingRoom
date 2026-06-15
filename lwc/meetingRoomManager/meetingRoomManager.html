@@ -1,0 +1,17 @@
+<template>
+    <div class="manager-container">
+        <div class="page-header">
+            <h1 class="page-title">Meeting Room Management</h1>
+            <p class="page-subtitle">Create, edit, and manage your organization's meeting rooms</p>
+        </div>
+        
+        <c-meeting-room-form 
+            onrefreshrooms={handleRefreshRooms}>
+        </c-meeting-room-form>
+        
+        <c-meeting-room-list 
+            oneditroom={handleEditRoom}
+            ondeleteroom={handleDeleteRoom}>
+        </c-meeting-room-list>
+    </div>
+</template>

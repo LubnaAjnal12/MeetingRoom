@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Custom object to track meeting room bookings with scheduling information, status, and user associations.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Booking</label>
+    <nameField>
+        <displayFormat>BK-{0000}</displayFormat>
+        <label>Booking Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Bookings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <fields>
+        <fullName>Date__c</fullName>
+        <description>The date on which the meeting room is booked.</description>
+        <inlineHelpText>Select the date for your meeting room booking.</inlineHelpText>
+        <label>Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Room__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Lookup relationship to the Meeting Room that is being booked.</description>
+        <inlineHelpText>Select the meeting room you want to book for this time slot.</inlineHelpText>
+        <label>Room</label>
+        <referenceTo>Meeting_Room__c</referenceTo>
+        <relationshipLabel>Bookings</relationshipLabel>
+        <relationshipName>Bookings</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Current status of the booking indicating whether it is scheduled, completed, cancelled, or expired.</description>
+        <inlineHelpText>Select the current status of this booking.</inlineHelpText>
+        <label>Status</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Scheduled</fullName>
+                    <default>true</default>
+                    <label>Scheduled</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Expired</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Expired</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Pending</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>End_Time__c</fullName>
+        <description>The end time of the meeting room booking.</description>
+        <inlineHelpText>Enter the time when your meeting will end (e.g., 11:00 AM). Must be after the start time.</inlineHelpText>
+        <label>End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Time</type>
+    </fields>
+    <fields>
+        <fullName>Attendees__c</fullName>
+        <description>Store comma-separated attendee emails</description>
+        <inlineHelpText>Comma-separated list of attendee email addresses</inlineHelpText>
+        <label>Attendees</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Booked_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup relationship to the User who created this booking.</description>
+        <inlineHelpText>The person who made this booking reservation.</inlineHelpText>
+        <label>Booked By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>Meeting Room Bookings</relationshipLabel>
+        <relationshipName>MeetingRoomBookings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Host_Email__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Email address of the Zoom meeting host</inlineHelpText>
+        <label>Host Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Time__c</fullName>
+        <description>The start time of the meeting room booking.</description>
+        <inlineHelpText>Enter the time when your meeting will start (e.g., 9:00 AM).</inlineHelpText>
+        <label>Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Time</type>
+    </fields>
+    <fields>
+        <fullName>Meeting_Link__c</fullName>
+        <description>URL link for the virtual meeting associated with this booking</description>
+        <inlineHelpText>Enter the complete meeting URL (e.g., Zoom, Teams, or Google Meet link) that participants will use to join the virtual meeting</inlineHelpText>
+        <label>Meeting Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Zoom_Response__c</fullName>
+        <description>Store API response for debugging</description>
+        <inlineHelpText>Store Zoom API response for debugging</inlineHelpText>
+        <label>Zoom Response</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Zoom_Meeting_ID__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Zoom Meeting ID for the created meeting</inlineHelpText>
+        <label>Zoom Meeting ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

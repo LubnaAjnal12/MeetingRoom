@@ -1,0 +1,134 @@
+/* Card hover effects */
+.slds-card_boundary {
+    transition: all 0.2s ease-in-out;
+}
+
+.booking-card {
+    margin-bottom: 0.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Booking list container */
+.booking-list {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+/* Scrollbar styling */
+.booking-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.booking-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.booking-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.booking-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Status badge custom colors */
+.slds-theme_success {
+    background-color: #04844b;
+    color: #f1f1f1;
+}
+
+.slds-theme_info {
+    background-color: #0176d3;
+}
+
+.slds-theme_warning {
+    background-color: #fe9339;
+}
+
+.slds-theme_error {
+    background-color: #ea001e;
+}
+
+/* Button icon hover effects */
+lightning-button-icon {
+    transition: transform 0.2s ease;
+}
+
+lightning-button-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Modal animations */
+.slds-modal {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Empty state styling */
+.slds-illustration {
+    padding: 2rem 1rem;
+}
+
+/* Form section styling */
+.slds-card__body_inner {
+    min-height: 350px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .booking-list {
+        max-height: 400px;
+    }
+    
+    .slds-card__body_inner {
+        min-height: auto;
+    }
+}
+
+/* Loading spinner positioning */
+.slds-spinner_container {
+    position: relative;
+}
+
+/* Badge text */
+lightning-badge {
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+/* Card header icons */
+.slds-icon_container {
+    border-radius: 0.25rem;
+}
+
+/* Improved spacing for booking info */
+.slds-text-body_small p {
+    margin-bottom: 0.25rem;
+    line-height: 1.5;
+}
+
+/* Action buttons alignment */
+.slds-text-align_right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
