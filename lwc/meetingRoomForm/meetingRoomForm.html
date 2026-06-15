@@ -1,0 +1,87 @@
+<template>
+    <div class="form-container">
+        <lightning-card title={formTitle} icon-name="standard:location">
+            <div class="slds-var-p-around_medium">
+                <template if:true={isLoading}>
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </template>
+                
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <!-- Room Name -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            data-field="name"
+                            label="Room Name"
+                            value={roomName}
+                            onchange={handleNameChange}
+                            required
+                            placeholder="e.g., Conference Room A"
+                            disabled={isLoading}
+                        ></lightning-input>
+                    </div>
+                    
+                    <!-- Capacity -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            data-field="capacity"
+                            type="number"
+                            label="Capacity"
+                            value={capacity}
+                            onchange={handleCapacityChange}
+                            required
+                            min="1"
+                            placeholder="e.g., 10"
+                            disabled={isLoading}
+                        ></lightning-input>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            data-field="location"
+                            label="Location"
+                            value={location}
+                            onchange={handleLocationChange}
+                            required
+                            placeholder="e.g., 3rd Floor, Building A"
+                            disabled={isLoading}
+                        ></lightning-input>
+                    </div>
+                    
+                    <!-- Availability -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <div class="slds-form-element slds-var-m-top_medium">
+                            <lightning-input
+                                type="checkbox"
+                                label="Available for Booking"
+                                checked={isAvailable}
+                                onchange={handleAvailabilityChange}
+                                disabled={isLoading}
+                            ></lightning-input>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="slds-var-m-top_large button-group">
+                    <lightning-button
+                        variant="brand"
+                        label={saveButtonLabel}
+                        onclick={handleSave}
+                        disabled={isLoading}
+                        class="slds-var-m-right_small"
+                    ></lightning-button>
+                    
+                    <template if:true={showCancelButton}>
+                        <lightning-button
+                            variant="neutral"
+                            label="Cancel"
+                            onclick={handleCancel}
+                            disabled={isLoading}
+                        ></lightning-button>
+                    </template>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>
